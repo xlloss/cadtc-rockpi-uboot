@@ -30,6 +30,11 @@ int rk_board_init(void)
 	struct udevice *pinctrl, *regulator;
 	int ret;
 
+	printf("%s\n", __func__);
+
+        /* user2 led power-off */
+	run_command("gpio clear 125", 0);
+
 	/*
 	 * The PWM does not have decicated interrupt number in dts and can
 	 * not get periph_id by pinctrl framework, so let's init them here.
