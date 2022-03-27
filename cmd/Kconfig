@@ -11,6 +11,13 @@ config CMDLINE
 	  Depending on the number of commands enabled, this can add
 	  substantially to the size of U-Boot.
 
+config CMD_HELLOWORLD
+	bool "Command Hello World Sample"
+	depends on CMDLINE
+	help
+	  This option enables the Hello World as command line
+	  Sample.
+
 config HUSH_PARSER
 	bool "Use hush shell"
 	depends on CMDLINE
