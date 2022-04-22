@@ -193,6 +193,35 @@
 		};
 	};
 
+
+	leds {
+		compatible = "gpio-leds";
+		pinctrl-names = "default";
+		pinctrl-0 = <&pin_led1 &pin_led2 &pin_led3 &pin_led4>;
+
+		led1 {
+			label = "user_led1";
+			gpios = <&gpio2 RK_PB3 GPIO_ACTIVE_LOW>;
+		};
+
+		led2 {
+			label = "user_led2";
+			gpios = <&gpio4 RK_PC2 GPIO_ACTIVE_LOW>;
+			default-state = "on";
+		};
+
+		led3 {
+			label = "user_led3";
+			gpios = <&gpio4 RK_PC6 GPIO_ACTIVE_LOW>;
+			default-state = "on";
+		};
+
+		led4 {
+			label = "user_led4";
+			gpios = <&gpio4 RK_PC5 GPIO_ACTIVE_LOW>;
+			default-state = "on";
+		};
+	};
 };
 
 &emmc_phy {
@@ -319,6 +348,32 @@
 				<1 18 RK_FUNC_GPIO &pcfg_pull_down>;
 		};
 	};
+
+
+	led {
+		pin_led1: pin_led1 {
+			rockchip,pins =
+				<RK_GPIO2 RK_PB3 RK_FUNC_GPIO &pcfg_pull_none>;
+		};
+
+		pin_led2: pin_led2 {
+			rockchip,pins =
+				<RK_GPIO4 RK_PC2 RK_FUNC_GPIO &pcfg_pull_none>;
+		};
+
+		pin_led3: pin_led3 {
+			rockchip,pins =
+				<RK_GPIO4 RK_PC6 RK_FUNC_GPIO &pcfg_pull_none>;
+		};
+
+		pin_led4: pin_led4 {
+			rockchip,pins =
+				<RK_GPIO4 RK_PC5 RK_FUNC_GPIO &pcfg_pull_none>;
+		};
+	};
+
+
+
 };
 
 &gmac {
