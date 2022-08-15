@@ -15,7 +15,7 @@
 #endif
 
 #define CONFIG_MMC_SDHCI_SDMA
-#define CONFIG_SYS_MMC_ENV_DEV 0
+#define CONFIG_SYS_MMC_ENV_DEV 1
 
 #define SDRAM_BANK_SIZE			(2UL << 30)
 #define CONFIG_MISC_INIT_R
